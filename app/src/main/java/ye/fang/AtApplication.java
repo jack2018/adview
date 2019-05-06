@@ -46,6 +46,7 @@ public class AtApplication extends Application {
             printWriter.close();
 //            String result = info.toString();
 //            android.os.Process.killProcess(android.os.Process.myPid());
+            Log.e("","");
             restartAPP(context);
         }
     };
