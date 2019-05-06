@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/loading_bg"
+        android:layout_width="300dp"
+        android:layout_height="100dp">
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        style="@style/AVLoadingIndicatorView.Small"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="visible"
+        app:indicatorColor="#1390ea"
+        app:indicatorName="PacmanIndicator" />
+    <TextView
+        android:layout_below="@+id/avi"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:text="加载中..."
+        android:textColor="#555555"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

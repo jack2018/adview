@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:style="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:background="#1a1a7c"
+    android:orientation="vertical">
+    <ye.fang.wigth.ShineTextView
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/tctt"
+        style="@style/big_text"
+        android:textColor="#ff333333"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="大  唐  市  场" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent">
+    <!--第一列-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/item_back"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            style="@style/middle_text"
+            android:text="今日单价"
+            android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/rel_price_date"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <!--第二列-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/item_back"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <TextView
+                android:layout_width="match_parent"
+                style="@style/middle_text"
+                android:text="今日检测"
+                android:layout_height="wrap_content" />
+            <include layout="@layout/item_day_check"></include>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/rel_check_day"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/item_back"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <TextView
+                android:layout_width="match_parent"
+                style="@style/middle_text"
+                android:text="历史检测不合格"
+                android:layout_height="wrap_content" />
+            <include layout="@layout/item_day_check"></include>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/rel_check_history"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+    <!--第三列-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_weight="1"
+           android:background="@drawable/item_back"
+           android:layout_width="match_parent"
+           android:layout_height="0dp">
+           <TextView
+               android:layout_width="match_parent"
+               style="@style/middle_text"
+               android:text="实时交易"
+               android:layout_height="wrap_content" />
+           <include layout="@layout/item_commit_data"></include>
+           <android.support.v7.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:id="@+id/rel_time_tran"
+               android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+       </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/item_back"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/rel_start_service"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ye.fang.ad"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:allowBackup="true"
+        android:name="ye.fang.AtApplication"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+        android:screenOrientation="landscape"
+        android:icon="@drawable/date_count"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="ye.fang.MainStartActivity"
+            android:label="@string/app_name"
+             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <meta-data
+        android:name="design_width_in_dp"
+        android:value="1280"/>
+    <meta-data
+        android:name="design_height_in_dp"
+        android:value="720"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 显示系统窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 在 屏幕最顶部显示addview -->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    
+</manifest>

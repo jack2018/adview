@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\totalmoney.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xhdpi\\totalmoney.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\cart.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xhdpi\\cart.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\cus_total.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xhdpi\\cus_total.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\cus_total2.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xhdpi\\cus_total2.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\date_count.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xhdpi\\date_count.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\totalcount.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xhdpi\\totalcount.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\ic_launcher.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    }
+]

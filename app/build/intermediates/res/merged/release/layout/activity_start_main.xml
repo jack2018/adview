@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:style="http://schemas.android.com/apk/res-auto"
+    android:background="#1a1a7c"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginTop="20dp"
+        style="@style/big_text"
+        android:textSize="25sp"
+        android:id="@+id/tv_big_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="大唐市场" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_time"
+        android:text="2019-11-11 01:01:01"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <!--第一列-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <!--第一列第一行-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/item_back"
+                android:layout_height="0dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="每日检验"
+                    android:layout_height="wrap_content" />
+                <include layout="@layout/item_day_check"></include>
+                <ye.fang.wigth.AutoScrollRecyclerView
+                    android:layout_width="match_parent"
+                    android:layoutAnimation="@anim/layout_animation_bottom_in"
+                    android:id="@+id/rel_check_data"
+                    android:layout_height="match_parent"></ye.fang.wigth.AutoScrollRecyclerView>
+            </LinearLayout>
+            <!--第一列第二行-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@drawable/item_back"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="历史检测"
+                    android:layout_height="wrap_content" />
+                <!--<vip.frendy.chart.EChartView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/chartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </vip.frendy.chart.EChartView>-->
+                <!--<com.github.mikephil.charting.charts.BarChart-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_marginBottom="4dp"-->
+                    <!--android:id="@+id/chartView2"-->
+                    <!--android:layout_height="match_parent">-->
+
+                <!--</com.github.mikephil.charting.charts.BarChart>-->
+                <include layout="@layout/item_day_histoty_check"></include>
+                <ye.fang.wigth.AutoScrollRecyclerView
+                    android:layout_width="match_parent"
+                    android:layoutAnimation="@anim/layout_animation_bottom_in"
+                    android:id="@+id/rel_history_check_data"
+                    android:layout_height="match_parent"></ye.fang.wigth.AutoScrollRecyclerView>
+
+            </LinearLayout>
+            <!--第一列第三行-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@drawable/item_back"
+                android:layout_height="0dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="每日销售额走势"
+                    android:layout_height="wrap_content" />
+                <com.github.mikephil.charting.charts.LineChart
+                    android:layout_width="match_parent"
+                    android:id="@+id/chatview3"
+                    android:layout_height="match_parent">
+
+                </com.github.mikephil.charting.charts.LineChart>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--第二列-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <!--第二列第一行-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_back">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="即时成交"
+                    android:layout_height="wrap_content" />
+                <include layout="@layout/item_commit_data"></include>
+                <ye.fang.wigth.AutoScrollRecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rel_commitdate"
+                    android:layoutAnimation="@anim/layout_animation_bottom_in"
+                    android:layout_height="match_parent"></ye.fang.wigth.AutoScrollRecyclerView>
+            </LinearLayout>
+            <!--第二列第二行-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_back">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="交易排行(交易频率)"
+                    android:layout_height="wrap_content" />
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:layout_width="match_parent"
+                    android:id="@+id/chatview4"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+            <!--第二列第三行-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_back">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="视屏"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+        <!--第三列-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <!--第三列第一行-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:background="@drawable/item_back"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="数据汇总"
+                    android:layout_height="wrap_content" />
+                <!--<com.github.mikephil.charting.charts.PieChart-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:id="@+id/chart_totle_datle"-->
+                <!--android:layout_height="match_parent"></com.github.mikephil.charting.charts.PieChart>-->
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/re_data_total"
+                    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+            <!--第三列第二行-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@drawable/item_back"
+                android:layout_height="0dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="日销售额排行"
+                    android:layout_height="wrap_content" />
+                <ye.fang.wigth.AutoScrollRecyclerView
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layoutAnimation="@anim/layout_animation_bottom_in"
+                    android:id="@+id/rel_price_date"
+                    android:layout_height="match_parent"></ye.fang.wigth.AutoScrollRecyclerView>
+                <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:id="@+id/chartView2"
+                android:layout_height="match_parent">
+                </com.github.mikephil.charting.charts.BarChart>
+            </LinearLayout>
+
+            <!--第三列第三行-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@drawable/item_back"
+                android:layout_height="0dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/middle_text"
+                    android:text="销售分类排行"
+                    android:layout_height="wrap_content" />
+                <com.github.mikephil.charting.charts.PieChart
+                android:layout_width="match_parent"
+                android:id="@+id/chart_totle_datle"
+                android:layout_height="match_parent"></com.github.mikephil.charting.charts.PieChart>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

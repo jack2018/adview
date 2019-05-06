@@ -1,0 +1,4 @@
+#Sun May 05 17:02:27 CST 2019
+base.0=E\:\\ASpro\\adview\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=E\:\\ASpro\\adview\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

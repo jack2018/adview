@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\contract_graft.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xxhdpi\\contract_graft.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\back.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xxhdpi\\back.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\ASpro\\adview\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\menu.png",
+        "source": "E:\\ASpro\\adview\\app\\src\\main\\res\\drawable-xxhdpi\\menu.png"
+    }
+]
