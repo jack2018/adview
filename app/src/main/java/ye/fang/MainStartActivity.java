@@ -271,8 +271,8 @@ public class MainStartActivity extends Activity implements UpdateRecycle {
     public void reportCount() {
         loadingDialog.show();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-        Call<String> call = ReRetrofitUntil.getRetrofit().ReportCount(SendJson.sendData(simpleDateFormat.format(CalendarDay.getDate(-80)), simpleDateFormat.format(new Date())), "ScaleNumber", "desc", 10000);
+      String cfd =  SendJson.sendData(simpleDateFormat.format(CalendarDay.getDate(-80)), simpleDateFormat.format(new Date()));
+        Call<String> call = ReRetrofitUntil.getRetrofit().ReportCount(cfd, "ScaleNumber", "desc", 10000);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
@@ -322,7 +322,8 @@ public class MainStartActivity extends Activity implements UpdateRecycle {
         final String text2=simpleDateFormat.format(nowdate);
 
         if(isshowdialog){
-            call = ReRetrofitUntil.getRetrofit().Report(SendJson.sendData3("",""), "OrderDate", "asc", dateleng);//首次进入
+           String ddc= SendJson.sendData3("","");
+            call = ReRetrofitUntil.getRetrofit().Report(ddc, "OrderDate", "asc", dateleng);//首次进入
         }else {
             if(TextUtils.isEmpty(text1)){
                 text1 = simpleDateFormat2.format(nowdate)+" 00:00:00";
@@ -338,6 +339,7 @@ public class MainStartActivity extends Activity implements UpdateRecycle {
                     daylyPrices = gson.fromJson(response.body(), new TypeToken<List<DayReport>>() {}.getType());
 //                    Collections.sort(daylyPrices);
                     Map<String, Double> studentMap = totalgo;
+                    Log.e("vv","数据大小"+daylyPrices.size()+"");
                     if (daylyPrices != null && daylyPrices.size() > 0) {
                         for (int i = 0; i < daylyPrices.size(); i++) {
                             String saletime = daylyPrices.get(i).getOrderDate().substring(11, 13);
@@ -407,7 +409,7 @@ Handler senddate = new Handler(){
     @Override
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
-//        daySaleReport(false);
+        daySaleReport(false);
     }
 };
     /*每日交易商品排行*/

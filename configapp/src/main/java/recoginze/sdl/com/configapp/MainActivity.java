@@ -33,7 +33,9 @@ import java.io.OutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.UUID;
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         tv_uuid.setText(Uid);
         et_ipaddress = findViewById(R.id.et_ipaddress);
         et_mart_name = findViewById(R.id.et_mart_name);
-
+        PermissionsUtils.checkPermissions(this, Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE);
 //      boolean is=  PermissionsUtils.checkPermissions(this, Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE);
 //       TextView tv_uuid = findViewById(R.id.tv_uuid);
 //       tv_uuid.setText(getUniqueID());//大唐市场
@@ -162,6 +164,8 @@ if(TextUtils.isEmpty(ipadd)||TextUtils.isEmpty(markName)){
         if(!filePic.exists()){
             filePic.getParentFile().mkdir();
             filePic.createNewFile();
+        }else {
+            Log.e("","");
         }
         FileOutputStream fileOutputStream = new FileOutputStream(filePic);
 //       FileOutputStream fileOutputStream = openFileOutput(savePath+"config.xml",Context.MODE_PRIVATE);
@@ -184,7 +188,12 @@ if(TextUtils.isEmpty(ipadd)||TextUtils.isEmpty(markName)){
 
         xmlSerializer.endTag(null,"info");
         xmlSerializer.endDocument();
-        Toast.makeText(MainActivity.this, "信息配置成功", Toast.LENGTH_SHORT).show();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(MainActivity.this, "信息配置成功", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void pullXml(File file) throws IOException, XmlPullParserException {
@@ -223,15 +232,18 @@ if(TextUtils.isEmpty(ipadd)||TextUtils.isEmpty(markName)){
             e.printStackTrace();
         }
     }
+    Socket socket;
 public void binddata(){
      String data ="DWL\tINF\t\r\nINF\t"+0+"\t"+0+"\t"+0+"\tADS-30上得利(测试版)\t1\t6\t"+Uid+"\t"+0+"\t\r\nEND\tINF\t\r\n";
+     Log.e("uuid","uidshen"+Uid);
      byte databyte[] = data.getBytes();
-    Socket socket;
     try {// 创建一个Socket对象，并指定服务端的IP及端口号
-        socket = new Socket("www.abcd-123.com", 9527);
+        socket = new Socket();
+        SocketAddress socAddress = new InetSocketAddress("www.abcd-123.com", 9527);
         // 创建一个InputStream用户读取要发送的文件。
+        socket.connect(socAddress,5000);
         OutputStream outputStream = socket.getOutputStream();
-      InputStream inputStream =  socket.getInputStream();
+        InputStream inputStream =  socket.getInputStream();
         // 创建一个byte类型的buffer字节数组，用于存放读取的本地文件
         byte buffer[] = new byte[1 * 1024];
         int temp = 0;
@@ -250,6 +262,7 @@ public void binddata(){
                      Toast.makeText(MainActivity.this, "绑定成功", Toast.LENGTH_SHORT).show();
                  }
              });
+//            socket.close();
         }
         /** 或创建一个报文，使用BufferedWriter写入,看你的需求 **/
 //          String socketData = "[2143213;21343fjks;213]";
@@ -264,6 +277,18 @@ public void binddata(){
         e.printStackTrace();
     }
 }
+
+    @Override
+    protected void onDestroy() {
+    if(socket!=null) {
+        try {
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        super.onDestroy();
+    }
 
     public static String toHexString1(byte[] b){
         StringBuffer buffer = new StringBuffer();
